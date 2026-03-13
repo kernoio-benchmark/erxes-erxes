@@ -60,3 +60,32 @@
 2026-03-13 20:39:31.983 [CHECKMARK] composeAgent - Dockerfile generated
 2026-03-13 20:39:32.013 [CHECKMARK] composeAgent - Context gathered
 2026-03-13 20:39:32.038 [CHECKMARK] composeAgent - docker-compose.yaml generated
+2026-03-13 20:39:46.510 [CHECKMARK] index - Files scanned
+2026-03-13 20:39:46.524 [INFO] index - Indexing your project
+2026-03-13 20:40:05.239 [CHECKMARK] index - Project indexed
+2026-03-13 20:40:05.246 [INFO] index - Analyzing imports
+2026-03-13 20:40:17.118 [CHECKMARK] index - Imports analyzed
+2026-03-13 20:40:17.176 [INFO] index - Analyzing external services
+2026-03-13 20:40:17.192 [INFO] index - Analyzing security
+2026-03-13 20:40:17.248 [INFO] index - Analyzing build configuration
+2026-03-13 20:40:33.140 [CHECKMARK] index - Security analyzed
+2026-03-13 20:40:35.139 [CHECKMARK] index - Build configuration analyzed
+2026-03-13 20:40:35.151 [INFO] composeAgent - Generating Dockerfile
+2026-03-13 20:40:42.239 [CHECKMARK] index - External services analyzed
+2026-03-13 20:46:41.140 [CHECKMARK] composeAgent - Dockerfile generated
+2026-03-13 20:46:41.150 [INFO] composeAgent - Gathering context
+2026-03-13 20:46:58.737 [CHECKMARK] composeAgent - Context gathered
+2026-03-13 20:46:58.764 [INFO] composeAgent - Generating docker-compose.yaml
+2026-03-13 21:57:42.005 [CHECKMARK] composeAgent - docker-compose.yaml generated
+2026-03-13 21:57:42.145 [CHECKMARK] index - Project indexed
+2026-03-13 21:57:42.204 [CHECKMARK] index - Imports analyzed
+2026-03-13 21:57:42.337 [CHECKMARK] index - Build configuration analyzed
+2026-03-13 21:57:42.427 [CHECKMARK] composeAgent - Dockerfile generated
+2026-03-13 21:57:42.552 [CHECKMARK] index - Project indexed
+2026-03-13 21:57:42.579 [CHECKMARK] index - Imports analyzed
+2026-03-13 21:57:42.763 [CHECKMARK] index - External services analyzed
+2026-03-13 21:57:42.768 [CHECKMARK] index - Build configuration analyzed
+2026-03-13 21:57:42.778 [CHECKMARK] index - Security analyzed
+2026-03-13 21:57:42.831 [CHECKMARK] composeAgent - Dockerfile generated
+2026-03-13 21:57:42.852 [CHECKMARK] composeAgent - Context gathered
+2026-03-13 21:57:42.874 [CHECKMARK] composeAgent - docker-compose.yaml generated

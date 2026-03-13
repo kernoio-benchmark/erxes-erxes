@@ -1,0 +1,128 @@
+services:
+  redis:
+    image: redis:8.4.0-alpine
+    pull_policy: missing
+    ports:
+      - "6379"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      interval: 3s
+      timeout: 5s
+      retries: 10
+    tmpfs:
+      - /data
+    labels:
+      - external-url=redis://localhost:{{PORT}}
+
+  elasticsearch:
+    image: elasticsearch:8.11.0
+    pull_policy: missing
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -f http://localhost:9200/_cluster/health || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    tmpfs:
+      - /usr/share/elasticsearch/data
+
+  sut:
+    build:
+      context: ${BUILD_CONTEXT}
+      dockerfile_inline: |
+        # Base image
+        FROM node:22-alpine AS base
+        WORKDIR /app
+        RUN npm install -g pnpm
+
+        # Build dependencies (all dependencies including dev)
+        FROM base AS build-deps
+        # Copy root manifests
+        COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.base.json nx.json ./
+        # Copy package.json files for all workspaces
+        COPY backend/plugins/accounting_api/package.json backend/plugins/accounting_api/
+        COPY backend/erxes-api-shared/package.json backend/erxes-api-shared/
+
+        # Install all dependencies (including devDependencies for build)
+        RUN pnpm install --frozen-lockfile
+
+        # Build stage
+        FROM build-deps AS builder
+        WORKDIR /app
+
+        # Copy all source code for both packages
+        COPY backend/plugins/accounting_api ./backend/plugins/accounting_api
+        COPY backend/erxes-api-shared ./backend/erxes-api-shared
+
+        # Build erxes-api-shared first (dependency)
+        WORKDIR /app/backend/erxes-api-shared
+        RUN pnpm build
+
+        # Build the accounting_api
+        WORKDIR /app/backend/plugins/accounting_api
+        RUN pnpm build
+
+        # Production dependencies stage
+        FROM base AS prod-deps
+        # Copy root manifests
+        COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.base.json nx.json ./
+        COPY backend/plugins/accounting_api/package.json backend/plugins/accounting_api/
+        COPY backend/erxes-api-shared/package.json backend/erxes-api-shared/
+
+        # Install only production dependencies
+        RUN pnpm install --prod --frozen-lockfile
+
+        # Runtime image
+        FROM base AS runtime
+        WORKDIR /app
+
+        # Copy built artifacts from builder stage
+        COPY --from=builder /app/backend/plugins/accounting_api/dist ./backend/plugins/accounting_api/dist
+        COPY --from=builder /app/backend/erxes-api-shared ./backend/erxes-api-shared
+        
+        # Copy root config files
+        COPY tsconfig.base.json ./
+        COPY --from=builder /app/backend/plugins/accounting_api/tsconfig.json ./backend/plugins/accounting_api/
+
+        # Copy production node_modules from prod-deps stage
+        COPY --from=prod-deps /app/node_modules ./node_modules
+        COPY --from=prod-deps /app/backend/plugins/accounting_api/node_modules ./backend/plugins/accounting_api/node_modules
+        COPY --from=prod-deps /app/backend/erxes-api-shared/node_modules ./backend/erxes-api-shared/node_modules
+
+        # Environment & security
+        ENV NODE_ENV=production
+        USER 1000
+
+        # Run app (tsc-alias resolves paths during build, so no need for tsconfig-paths at runtime)
+        CMD ["node", "backend/plugins/accounting_api/dist/src/main.js"]
+    depends_on:
+      redis:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    env_file:
+      - .env
+    ports:
+      - "8000"
