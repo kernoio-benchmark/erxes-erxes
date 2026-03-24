@@ -46,3 +46,43 @@
 2026-03-24 14:24:58.498 [CHECKMARK] - composeAgent - backend-core-api-ts - Dockerfile generated
 2026-03-24 14:24:58.507 [CHECKMARK] - composeAgent - backend-core-api-ts - Context gathered
 2026-03-24 14:24:58.516 [CHECKMARK] - composeAgent - backend-core-api-ts - docker-compose.yaml generated
+2026-03-24 14:25:05.097 [CHECKMARK] - composeAgent - backend-core-api-ts - Docker compose project running
+2026-03-24 14:25:05.117 [CHECKMARK] - index - erxes-erxes-1e1e7d - Files scanned
+2026-03-24 14:25:05.117 [INFO] - index - erxes-erxes-1e1e7d - Found 25 module(s)
+2026-03-24 14:25:05.117 [INFO] - index - erxes-erxes-1e1e7d - Detected applications: core-api, gateway, accounting, content, frontline, insurance_api, loyalty, mongolian_api, operation_api, payment_api, posclient, sales, tourism, automations, client-portal-template
+2026-03-24 14:25:05.120 [INFO] - index - backend-gateway-ts - Indexing your project
+2026-03-24 14:25:05.120 [DEBUG] - index - backend-gateway-ts - Cache miss for indexing your project
+2026-03-24 14:25:06.788 [CHECKMARK] - index - backend-gateway-ts - Project indexed
+2026-03-24 14:25:06.790 [INFO] - index - backend-gateway-ts - Analyzing imports
+2026-03-24 14:25:06.791 [DEBUG] - index - backend-gateway-ts - Cache miss for analyzing imports
+2026-03-24 14:25:13.545 [CHECKMARK] - index - backend-gateway-ts - Imports analyzed
+2026-03-24 14:25:13.565 [INFO] - index - backend-gateway-ts - Analyzing security
+2026-03-24 14:25:13.566 [INFO] - index - backend-gateway-ts - Analyzing external services
+2026-03-24 14:25:13.566 [DEBUG] - index - backend-gateway-ts - Cache miss for analyzing external services
+2026-03-24 14:25:13.566 [DEBUG] - index - backend-gateway-ts - Cache miss for analyzing security
+2026-03-24 14:25:13.576 [INFO] - index - backend-gateway-ts - Analyzing build configuration
+2026-03-24 14:25:13.577 [DEBUG] - index - backend-gateway-ts - Cache miss for analyzing build configuration
+2026-03-24 14:25:30.812 [CHECKMARK] - index - backend-gateway-ts - Security analyzed
+2026-03-24 14:25:31.297 [CHECKMARK] - index - backend-gateway-ts - External services analyzed
+2026-03-24 14:25:37.395 [CHECKMARK] - index - backend-gateway-ts - Build configuration analyzed
+2026-03-24 14:25:37.398 [INFO] - composeAgent - backend-gateway-ts - Generating Dockerfile
+2026-03-24 14:25:37.398 [DEBUG] - composeAgent - backend-gateway-ts - Cache miss for generating dockerfile
+2026-03-24 14:30:25.979 [CHECKMARK] - composeAgent - backend-gateway-ts - Dockerfile generated
+2026-03-24 14:30:25.982 [INFO] - composeAgent - backend-gateway-ts - Gathering context
+2026-03-24 14:30:25.982 [DEBUG] - composeAgent - backend-gateway-ts - Cache miss for gathering context
+2026-03-24 14:30:47.054 [CHECKMARK] - composeAgent - backend-gateway-ts - Context gathered
+2026-03-24 14:30:47.056 [INFO] - composeAgent - backend-gateway-ts - Generating docker-compose.yaml
+2026-03-24 14:30:47.056 [DEBUG] - composeAgent - backend-gateway-ts - Cache miss for generating docker-compose.yaml
+2026-03-24 14:41:49.662 [CHECKMARK] - composeAgent - backend-gateway-ts - docker-compose.yaml generated
+2026-03-24 14:41:49.680 [CHECKMARK] - index - backend-gateway-ts - Project indexed
+2026-03-24 14:41:49.687 [CHECKMARK] - index - backend-gateway-ts - Imports analyzed
+2026-03-24 14:41:49.704 [CHECKMARK] - index - backend-gateway-ts - Build configuration analyzed
+2026-03-24 14:41:49.714 [CHECKMARK] - composeAgent - backend-gateway-ts - Dockerfile generated
+2026-03-24 14:41:49.730 [CHECKMARK] - index - backend-gateway-ts - Project indexed
+2026-03-24 14:41:49.740 [CHECKMARK] - index - backend-gateway-ts - Imports analyzed
+2026-03-24 14:41:49.765 [CHECKMARK] - index - backend-gateway-ts - External services analyzed
+2026-03-24 14:41:49.766 [CHECKMARK] - index - backend-gateway-ts - Security analyzed
+2026-03-24 14:41:49.766 [CHECKMARK] - index - backend-gateway-ts - Build configuration analyzed
+2026-03-24 14:41:49.775 [CHECKMARK] - composeAgent - backend-gateway-ts - Dockerfile generated
+2026-03-24 14:41:49.783 [CHECKMARK] - composeAgent - backend-gateway-ts - Context gathered
+2026-03-24 14:41:49.791 [CHECKMARK] - composeAgent - backend-gateway-ts - docker-compose.yaml generated

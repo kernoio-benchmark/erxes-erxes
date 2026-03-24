@@ -1,0 +1,126 @@
+services:
+  mongodb_primary:
+    image: mongo:8.0
+    pull_policy: missing
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=erxes_user
+      - MONGO_INITDB_ROOT_PASSWORD=erxes_password
+      - MONGO_INITDB_DATABASE=erxes
+    tmpfs:
+      - /data/db
+    ports:
+      - "27017"
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --username $$MONGO_INITDB_ROOT_USERNAME --password $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin --eval 'db.adminCommand({ ping: 1 })' --quiet || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    labels:
+      - external-url=mongodb://localhost:{{PORT}}/erxes?user=erxes_user&password=erxes_password
+
+  mongodb_core:
+    image: mongo:8.0
+    pull_policy: missing
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=erxes_core_user
+      - MONGO_INITDB_ROOT_PASSWORD=erxes_core_password
+      - MONGO_INITDB_DATABASE=erxes_core
+    tmpfs:
+      - /data/db
+    ports:
+      - "27017"
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --username $$MONGO_INITDB_ROOT_USERNAME --password $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin --eval 'db.adminCommand({ ping: 1 })' --quiet || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    labels:
+      - external-url=mongodb://localhost:{{PORT}}/erxes_core?user=erxes_core_user&password=erxes_core_password
+
+  redis:
+    image: redis:8.4.0-alpine
+    pull_policy: missing
+    command: redis-server --requirepass erxes_redis_password
+    ports:
+      - "6379"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "erxes_redis_password", "ping"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+    tmpfs:
+      - /data
+    labels:
+      - external-url=redis://localhost:{{PORT}}
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    pull_policy: missing
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    tmpfs:
+      - /usr/share/elasticsearch/data
+    ports:
+      - "9200"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    labels:
+      - external-url=http://localhost:{{PORT}}
+
+  sut:
+    build:
+      context: ${BUILD_CONTEXT}
+      dockerfile: ${DOCKERFILE_PATH}
+    depends_on:
+      mongodb_primary:
+        condition: service_healthy
+      mongodb_core:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    env_file:
+      - .env
+    ports:
+      - "3001"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:3001/ || exit 1"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    labels:
+      - jwt-signing-config=HS256:this_is_a_secret_meeting_all_requirements_of_any_hs_algorithms
