@@ -126,3 +126,43 @@
 2026-03-24 15:15:29.468 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - Dockerfile generated
 2026-03-24 15:15:29.478 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - Context gathered
 2026-03-24 15:15:29.485 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - docker-compose.yaml generated
+2026-03-24 15:15:41.505 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - Docker compose project running
+2026-03-24 15:15:41.528 [CHECKMARK] - index - erxes-erxes-1e1e7d - Files scanned
+2026-03-24 15:15:41.528 [INFO] - index - erxes-erxes-1e1e7d - Found 25 module(s)
+2026-03-24 15:15:41.528 [INFO] - index - erxes-erxes-1e1e7d - Detected applications: core-api, gateway, accounting, content, frontline, insurance_api, loyalty, mongolian_api, operation_api, payment_api, posclient, sales, tourism, automations, client-portal-template
+2026-03-24 15:15:41.537 [INFO] - index - backend-plugins-content-api-ts - Indexing your project
+2026-03-24 15:15:41.537 [DEBUG] - index - backend-plugins-content-api-ts - Cache miss for indexing your project
+2026-03-24 15:15:43.245 [CHECKMARK] - index - backend-plugins-content-api-ts - Project indexed
+2026-03-24 15:15:43.247 [INFO] - index - backend-plugins-content-api-ts - Analyzing imports
+2026-03-24 15:15:43.248 [DEBUG] - index - backend-plugins-content-api-ts - Cache miss for analyzing imports
+2026-03-24 15:15:51.939 [CHECKMARK] - index - backend-plugins-content-api-ts - Imports analyzed
+2026-03-24 15:15:51.962 [INFO] - index - backend-plugins-content-api-ts - Analyzing external services
+2026-03-24 15:15:51.962 [INFO] - index - backend-plugins-content-api-ts - Analyzing security
+2026-03-24 15:15:51.962 [DEBUG] - index - backend-plugins-content-api-ts - Cache miss for analyzing external services
+2026-03-24 15:15:51.962 [DEBUG] - index - backend-plugins-content-api-ts - Cache miss for analyzing security
+2026-03-24 15:15:51.970 [INFO] - index - backend-plugins-content-api-ts - Analyzing build configuration
+2026-03-24 15:15:51.970 [DEBUG] - index - backend-plugins-content-api-ts - Cache miss for analyzing build configuration
+2026-03-24 15:15:58.074 [CHECKMARK] - index - backend-plugins-content-api-ts - Security analyzed
+2026-03-24 15:16:12.325 [CHECKMARK] - index - backend-plugins-content-api-ts - Build configuration analyzed
+2026-03-24 15:16:12.327 [INFO] - composeAgent - backend-plugins-content-api-ts - Generating Dockerfile
+2026-03-24 15:16:12.328 [DEBUG] - composeAgent - backend-plugins-content-api-ts - Cache miss for generating dockerfile
+2026-03-24 15:16:13.278 [CHECKMARK] - index - backend-plugins-content-api-ts - External services analyzed
+2026-03-24 15:17:48.846 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - Dockerfile generated
+2026-03-24 15:17:48.848 [INFO] - composeAgent - backend-plugins-content-api-ts - Gathering context
+2026-03-24 15:17:48.848 [DEBUG] - composeAgent - backend-plugins-content-api-ts - Cache miss for gathering context
+2026-03-24 15:18:08.897 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - Context gathered
+2026-03-24 15:18:08.899 [INFO] - composeAgent - backend-plugins-content-api-ts - Generating docker-compose.yaml
+2026-03-24 15:18:08.899 [DEBUG] - composeAgent - backend-plugins-content-api-ts - Cache miss for generating docker-compose.yaml
+2026-03-24 15:31:52.721 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - docker-compose.yaml generated
+2026-03-24 15:31:52.738 [CHECKMARK] - index - backend-plugins-content-api-ts - Project indexed
+2026-03-24 15:31:52.747 [CHECKMARK] - index - backend-plugins-content-api-ts - Imports analyzed
+2026-03-24 15:31:52.762 [CHECKMARK] - index - backend-plugins-content-api-ts - Build configuration analyzed
+2026-03-24 15:31:52.769 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - Dockerfile generated
+2026-03-24 15:31:52.792 [CHECKMARK] - index - backend-plugins-content-api-ts - Project indexed
+2026-03-24 15:31:52.799 [CHECKMARK] - index - backend-plugins-content-api-ts - Imports analyzed
+2026-03-24 15:31:52.812 [CHECKMARK] - index - backend-plugins-content-api-ts - Build configuration analyzed
+2026-03-24 15:31:52.812 [CHECKMARK] - index - backend-plugins-content-api-ts - Security analyzed
+2026-03-24 15:31:52.812 [CHECKMARK] - index - backend-plugins-content-api-ts - External services analyzed
+2026-03-24 15:31:52.818 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - Dockerfile generated
+2026-03-24 15:31:52.826 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - Context gathered
+2026-03-24 15:31:52.833 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - docker-compose.yaml generated

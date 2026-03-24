@@ -1,0 +1,96 @@
+services:
+  mongodb:
+    image: mongo:8.0
+    pull_policy: missing
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=erxes_user
+      - MONGO_INITDB_ROOT_PASSWORD=erxes_password
+      - MONGO_INITDB_DATABASE=erxes
+    tmpfs:
+      - /data/db
+    ports:
+      - "27017"
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --username $$MONGO_INITDB_ROOT_USERNAME --password $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin --eval 'db.adminCommand({ ping: 1 })' --quiet || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    labels:
+      - external-url=mongodb://localhost:{{PORT}}/erxes?user=erxes_user&password=erxes_password
+
+  mongodb_core:
+    image: mongo:8.0
+    pull_policy: missing
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=core_user
+      - MONGO_INITDB_ROOT_PASSWORD=core_password
+      - MONGO_INITDB_DATABASE=erxes_core
+    tmpfs:
+      - /data/db
+    ports:
+      - "27017"
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --username $$MONGO_INITDB_ROOT_USERNAME --password $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin --eval 'db.adminCommand({ ping: 1 })' --quiet || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    labels:
+      - external-url=mongodb://localhost:{{PORT}}/erxes_core?user=core_user&password=core_password
+
+  redis:
+    image: redis:8.4.0-alpine
+    pull_policy: missing
+    ports:
+      - "6379"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+    tmpfs:
+      - /data
+    labels:
+      - external-url=redis://localhost:{{PORT}}
+
+  sut:
+    build:
+      context: ${BUILD_CONTEXT}
+      dockerfile: ${DOCKERFILE_PATH}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      mongodb_core:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - .env
+    ports:
+      - "3000"
+    restart: "no"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:3000/graphql || exit 1"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
