@@ -86,3 +86,43 @@
 2026-03-24 14:41:49.775 [CHECKMARK] - composeAgent - backend-gateway-ts - Dockerfile generated
 2026-03-24 14:41:49.783 [CHECKMARK] - composeAgent - backend-gateway-ts - Context gathered
 2026-03-24 14:41:49.791 [CHECKMARK] - composeAgent - backend-gateway-ts - docker-compose.yaml generated
+2026-03-24 14:42:01.555 [CHECKMARK] - composeAgent - backend-gateway-ts - Docker compose project running
+2026-03-24 14:42:01.570 [CHECKMARK] - index - erxes-erxes-1e1e7d - Files scanned
+2026-03-24 14:42:01.571 [INFO] - index - erxes-erxes-1e1e7d - Found 25 module(s)
+2026-03-24 14:42:01.571 [INFO] - index - erxes-erxes-1e1e7d - Detected applications: core-api, gateway, accounting, content, frontline, insurance_api, loyalty, mongolian_api, operation_api, payment_api, posclient, sales, tourism, automations, client-portal-template
+2026-03-24 14:42:01.574 [INFO] - index - backend-plugins-accounting-api-ts - Indexing your project
+2026-03-24 14:42:01.574 [DEBUG] - index - backend-plugins-accounting-api-ts - Cache miss for indexing your project
+2026-03-24 14:42:03.231 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Project indexed
+2026-03-24 14:42:03.233 [INFO] - index - backend-plugins-accounting-api-ts - Analyzing imports
+2026-03-24 14:42:03.233 [DEBUG] - index - backend-plugins-accounting-api-ts - Cache miss for analyzing imports
+2026-03-24 14:42:12.546 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Imports analyzed
+2026-03-24 14:42:12.563 [INFO] - index - backend-plugins-accounting-api-ts - Analyzing external services
+2026-03-24 14:42:12.563 [DEBUG] - index - backend-plugins-accounting-api-ts - Cache miss for analyzing external services
+2026-03-24 14:42:12.563 [INFO] - index - backend-plugins-accounting-api-ts - Analyzing security
+2026-03-24 14:42:12.563 [DEBUG] - index - backend-plugins-accounting-api-ts - Cache miss for analyzing security
+2026-03-24 14:42:12.582 [INFO] - index - backend-plugins-accounting-api-ts - Analyzing build configuration
+2026-03-24 14:42:12.582 [DEBUG] - index - backend-plugins-accounting-api-ts - Cache miss for analyzing build configuration
+2026-03-24 14:42:18.413 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Security analyzed
+2026-03-24 14:42:24.642 [CHECKMARK] - index - backend-plugins-accounting-api-ts - External services analyzed
+2026-03-24 14:42:37.710 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Build configuration analyzed
+2026-03-24 14:42:37.714 [INFO] - composeAgent - backend-plugins-accounting-api-ts - Generating Dockerfile
+2026-03-24 14:42:37.714 [DEBUG] - composeAgent - backend-plugins-accounting-api-ts - Cache miss for generating dockerfile
+2026-03-24 14:44:14.516 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - Dockerfile generated
+2026-03-24 14:44:14.518 [INFO] - composeAgent - backend-plugins-accounting-api-ts - Gathering context
+2026-03-24 14:44:14.518 [DEBUG] - composeAgent - backend-plugins-accounting-api-ts - Cache miss for gathering context
+2026-03-24 14:44:29.150 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - Context gathered
+2026-03-24 14:44:29.153 [INFO] - composeAgent - backend-plugins-accounting-api-ts - Generating docker-compose.yaml
+2026-03-24 14:44:29.153 [DEBUG] - composeAgent - backend-plugins-accounting-api-ts - Cache miss for generating docker-compose.yaml
+2026-03-24 15:15:29.361 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - docker-compose.yaml generated
+2026-03-24 15:15:29.381 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Project indexed
+2026-03-24 15:15:29.389 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Imports analyzed
+2026-03-24 15:15:29.402 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Build configuration analyzed
+2026-03-24 15:15:29.409 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - Dockerfile generated
+2026-03-24 15:15:29.439 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Project indexed
+2026-03-24 15:15:29.445 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Imports analyzed
+2026-03-24 15:15:29.459 [CHECKMARK] - index - backend-plugins-accounting-api-ts - External services analyzed
+2026-03-24 15:15:29.459 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Build configuration analyzed
+2026-03-24 15:15:29.460 [CHECKMARK] - index - backend-plugins-accounting-api-ts - Security analyzed
+2026-03-24 15:15:29.468 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - Dockerfile generated
+2026-03-24 15:15:29.478 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - Context gathered
+2026-03-24 15:15:29.485 [CHECKMARK] - composeAgent - backend-plugins-accounting-api-ts - docker-compose.yaml generated
