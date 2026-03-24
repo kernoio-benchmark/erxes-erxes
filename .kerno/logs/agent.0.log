@@ -1,0 +1,42 @@
+2026-03-24 14:15:55.830 [INFO] - index - erxes-erxes-1e1e7d - Scanning files
+2026-03-24 14:15:55.831 [DEBUG] - index - erxes-erxes-1e1e7d - Cache miss for scanning files
+2026-03-24 14:16:08.323 [INFO] - index - Expected exactly 1 module, found 25 — skipping analysis
+2026-03-24 14:16:08.324 [CHECKMARK] - index - erxes-erxes-1e1e7d - Files scanned
+2026-03-24 14:16:08.326 [INFO] - index - erxes-erxes-1e1e7d - Found 25 module(s)
+2026-03-24 14:16:08.327 [INFO] - index - erxes-erxes-1e1e7d - Detected applications: core-api, gateway, accounting, content, frontline, insurance_api, loyalty, mongolian_api, operation_api, payment_api, posclient, sales, tourism, automations, client-portal-template
+2026-03-24 14:16:08.359 [CHECKMARK] - index - erxes-erxes-1e1e7d - Files scanned
+2026-03-24 14:16:08.359 [INFO] - index - erxes-erxes-1e1e7d - Found 25 module(s)
+2026-03-24 14:16:08.360 [INFO] - index - erxes-erxes-1e1e7d - Detected applications: core-api, gateway, accounting, content, frontline, insurance_api, loyalty, mongolian_api, operation_api, payment_api, posclient, sales, tourism, automations, client-portal-template
+2026-03-24 14:16:08.398 [CHECKMARK] - index - erxes-erxes-1e1e7d - Files scanned
+2026-03-24 14:16:08.399 [INFO] - index - erxes-erxes-1e1e7d - Found 25 module(s)
+2026-03-24 14:16:08.399 [INFO] - index - erxes-erxes-1e1e7d - Detected applications: core-api, gateway, accounting, content, frontline, insurance_api, loyalty, mongolian_api, operation_api, payment_api, posclient, sales, tourism, automations, client-portal-template
+2026-03-24 14:16:08.413 [INFO] - index - backend-core-api-ts - Indexing your project
+2026-03-24 14:16:08.413 [DEBUG] - index - backend-core-api-ts - Cache miss for indexing your project
+2026-03-24 14:16:11.321 [CHECKMARK] - index - backend-core-api-ts - Project indexed
+2026-03-24 14:16:11.324 [INFO] - index - backend-core-api-ts - Analyzing imports
+2026-03-24 14:16:11.324 [DEBUG] - index - backend-core-api-ts - Cache miss for analyzing imports
+2026-03-24 14:16:23.682 [CHECKMARK] - index - backend-core-api-ts - Imports analyzed
+2026-03-24 14:16:23.715 [INFO] - index - backend-core-api-ts - Analyzing security
+2026-03-24 14:16:23.715 [INFO] - index - backend-core-api-ts - Analyzing external services
+2026-03-24 14:16:23.715 [DEBUG] - index - backend-core-api-ts - Cache miss for analyzing security
+2026-03-24 14:16:23.715 [DEBUG] - index - backend-core-api-ts - Cache miss for analyzing external services
+2026-03-24 14:16:23.736 [INFO] - index - backend-core-api-ts - Analyzing build configuration
+2026-03-24 14:16:23.736 [DEBUG] - index - backend-core-api-ts - Cache miss for analyzing build configuration
+2026-03-24 14:16:41.056 [CHECKMARK] - index - backend-core-api-ts - Build configuration analyzed
+2026-03-24 14:16:41.058 [INFO] - composeAgent - backend-core-api-ts - Generating Dockerfile
+2026-03-24 14:16:41.059 [DEBUG] - composeAgent - backend-core-api-ts - Cache miss for generating dockerfile
+2026-03-24 14:16:45.761 [CHECKMARK] - index - backend-core-api-ts - External services analyzed
+2026-03-24 14:16:49.357 [CHECKMARK] - index - backend-core-api-ts - Security analyzed
+2026-03-24 14:18:16.547 [CHECKMARK] - composeAgent - backend-core-api-ts - Dockerfile generated
+2026-03-24 14:18:16.549 [INFO] - composeAgent - backend-core-api-ts - Gathering context
+2026-03-24 14:18:16.549 [DEBUG] - composeAgent - backend-core-api-ts - Cache miss for gathering context
+2026-03-24 14:18:44.180 [CHECKMARK] - composeAgent - backend-core-api-ts - Context gathered
+2026-03-24 14:18:44.182 [INFO] - composeAgent - backend-core-api-ts - Generating docker-compose.yaml
+2026-03-24 14:18:44.182 [DEBUG] - composeAgent - backend-core-api-ts - Cache miss for generating docker-compose.yaml
+2026-03-24 14:24:58.271 [CHECKMARK] - composeAgent - backend-core-api-ts - docker-compose.yaml generated
+2026-03-24 14:24:58.356 [CHECKMARK] - index - backend-core-api-ts - Project indexed
+2026-03-24 14:24:58.370 [CHECKMARK] - index - backend-core-api-ts - Imports analyzed
+2026-03-24 14:24:58.390 [CHECKMARK] - index - backend-core-api-ts - Build configuration analyzed
+2026-03-24 14:24:58.400 [CHECKMARK] - composeAgent - backend-core-api-ts - Dockerfile generated
+2026-03-24 14:24:58.458 [CHECKMARK] - index - backend-core-api-ts - Project indexed
+2026-03-24 14:24:58.470 [CHECKMARK] - index - backend-core-api-ts - Imports analyzed
