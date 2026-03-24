@@ -166,3 +166,43 @@
 2026-03-24 15:31:52.818 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - Dockerfile generated
 2026-03-24 15:31:52.826 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - Context gathered
 2026-03-24 15:31:52.833 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - docker-compose.yaml generated
+2026-03-24 15:31:59.807 [CHECKMARK] - composeAgent - backend-plugins-content-api-ts - Docker compose project running
+2026-03-24 15:31:59.825 [CHECKMARK] - index - erxes-erxes-1e1e7d - Files scanned
+2026-03-24 15:31:59.825 [INFO] - index - erxes-erxes-1e1e7d - Found 25 module(s)
+2026-03-24 15:31:59.825 [INFO] - index - erxes-erxes-1e1e7d - Detected applications: core-api, gateway, accounting, content, frontline, insurance_api, loyalty, mongolian_api, operation_api, payment_api, posclient, sales, tourism, automations, client-portal-template
+2026-03-24 15:31:59.828 [INFO] - index - backend-plugins-frontline-api-ts - Indexing your project
+2026-03-24 15:31:59.828 [DEBUG] - index - backend-plugins-frontline-api-ts - Cache miss for indexing your project
+2026-03-24 15:32:04.072 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Project indexed
+2026-03-24 15:32:04.074 [INFO] - index - backend-plugins-frontline-api-ts - Analyzing imports
+2026-03-24 15:32:04.074 [DEBUG] - index - backend-plugins-frontline-api-ts - Cache miss for analyzing imports
+2026-03-24 15:32:16.677 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Imports analyzed
+2026-03-24 15:32:16.698 [INFO] - index - backend-plugins-frontline-api-ts - Analyzing security
+2026-03-24 15:32:16.698 [DEBUG] - index - backend-plugins-frontline-api-ts - Cache miss for analyzing security
+2026-03-24 15:32:16.698 [INFO] - index - backend-plugins-frontline-api-ts - Analyzing external services
+2026-03-24 15:32:16.698 [DEBUG] - index - backend-plugins-frontline-api-ts - Cache miss for analyzing external services
+2026-03-24 15:32:16.706 [INFO] - index - backend-plugins-frontline-api-ts - Analyzing build configuration
+2026-03-24 15:32:16.706 [DEBUG] - index - backend-plugins-frontline-api-ts - Cache miss for analyzing build configuration
+2026-03-24 15:32:25.904 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Security analyzed
+2026-03-24 15:32:31.897 [CHECKMARK] - index - backend-plugins-frontline-api-ts - External services analyzed
+2026-03-24 15:32:54.332 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Build configuration analyzed
+2026-03-24 15:32:54.333 [INFO] - composeAgent - backend-plugins-frontline-api-ts - Generating Dockerfile
+2026-03-24 15:32:54.334 [DEBUG] - composeAgent - backend-plugins-frontline-api-ts - Cache miss for generating dockerfile
+2026-03-24 15:34:29.970 [CHECKMARK] - composeAgent - backend-plugins-frontline-api-ts - Dockerfile generated
+2026-03-24 15:34:29.973 [INFO] - composeAgent - backend-plugins-frontline-api-ts - Gathering context
+2026-03-24 15:34:29.973 [DEBUG] - composeAgent - backend-plugins-frontline-api-ts - Cache miss for gathering context
+2026-03-24 15:34:47.439 [CHECKMARK] - composeAgent - backend-plugins-frontline-api-ts - Context gathered
+2026-03-24 15:34:47.441 [INFO] - composeAgent - backend-plugins-frontline-api-ts - Generating docker-compose.yaml
+2026-03-24 15:34:47.442 [DEBUG] - composeAgent - backend-plugins-frontline-api-ts - Cache miss for generating docker-compose.yaml
+2026-03-24 15:51:58.790 [CHECKMARK] - composeAgent - backend-plugins-frontline-api-ts - docker-compose.yaml generated
+2026-03-24 15:51:58.833 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Project indexed
+2026-03-24 15:51:58.840 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Imports analyzed
+2026-03-24 15:51:58.854 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Build configuration analyzed
+2026-03-24 15:51:58.861 [CHECKMARK] - composeAgent - backend-plugins-frontline-api-ts - Dockerfile generated
+2026-03-24 15:51:58.902 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Project indexed
+2026-03-24 15:51:58.911 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Imports analyzed
+2026-03-24 15:51:58.927 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Build configuration analyzed
+2026-03-24 15:51:58.927 [CHECKMARK] - index - backend-plugins-frontline-api-ts - External services analyzed
+2026-03-24 15:51:58.927 [CHECKMARK] - index - backend-plugins-frontline-api-ts - Security analyzed
+2026-03-24 15:51:58.936 [CHECKMARK] - composeAgent - backend-plugins-frontline-api-ts - Dockerfile generated
+2026-03-24 15:51:58.944 [CHECKMARK] - composeAgent - backend-plugins-frontline-api-ts - Context gathered
+2026-03-24 15:51:58.952 [CHECKMARK] - composeAgent - backend-plugins-frontline-api-ts - docker-compose.yaml generated

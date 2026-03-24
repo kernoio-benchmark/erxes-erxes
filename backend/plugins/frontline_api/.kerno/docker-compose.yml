@@ -1,0 +1,98 @@
+services:
+  redis:
+    image: redis:8.4.0-alpine
+    pull_policy: missing
+    ports:
+      - "6379"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      interval: 3s
+      timeout: 5s
+      retries: 10
+    tmpfs:
+      - /data
+    labels:
+      - external-url=redis://localhost:{{PORT}}
+
+  mongo:
+    image: mongo:8.0
+    pull_policy: missing
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=test_user
+      - MONGO_INITDB_ROOT_PASSWORD=test_password
+      - MONGO_INITDB_DATABASE=test_db
+    tmpfs:
+      - /data/db
+    ports:
+      - "27017"
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --username $$MONGO_INITDB_ROOT_USERNAME --password $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin --eval 'db.adminCommand({ ping: 1 })' --quiet || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    labels:
+      - external-url=mongodb://localhost:{{PORT}}/test_db?user=test_user&password=test_password
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    pull_policy: missing
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    tmpfs:
+      - /usr/share/elasticsearch/data
+    ports:
+      - "9200"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  sut:
+    build:
+      context: ${BUILD_CONTEXT}
+      dockerfile: ${DOCKERFILE_PATH}
+    depends_on:
+      redis:
+        condition: service_healthy
+      mongo:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    env_file:
+      - .env
+    ports:
+      - "3304"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3304/graphql -X POST -H 'Content-Type: application/json' -d '{\"query\":\"{__typename}\"}' || exit 1"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    labels:
+      - jwt-signing-config=HS256:this_is_a_secret_meeting_all_requirements_of_any_hs_algorithms
